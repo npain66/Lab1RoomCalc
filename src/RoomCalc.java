@@ -12,29 +12,38 @@ public class RoomCalc {
         Scanner peri = new Scanner(System.in);
 
 
+
         //2. output so the user knows what's up
-        System.out.println("Welcome to the Room Calculator");
+        System.out.println("Enter Room Calculator");
+
 
         //3. ask for input
-        System.out.print("Please enter length of room: ");
-        double length = peri.nextDouble();
+        int answer = 1;
+        while (answer == 1) {
 
-        System.out.print("Please enter width of room: ");
-        double width = peri.nextDouble();
 
-        //4. perform calculations
-        double room = .5 * length * width;
+            System.out.print("Please enter length of room: ");
+            double length = peri.nextDouble();
 
-        //5. output results
-        System.out.println("The room is " + room);
+            System.out.print("Please enter width of room: ");
+            double width = peri.nextDouble();
+
+            //4. perform calculations
+            double room = length * width;
+            double perimeter = 2 * (length + width);
+
+            //5. output results
+            System.out.println("The room is " + room);
+            System.out.println("The perimeter is " + perimeter);
+
+            System.out.println("Continue? Enter (1) for yes; + Enter (2) for no;");
+            answer = peri.nextInt();
+        }
 
         //6. close out resources
 
         peri.close();
 
-        System.out.println("Length: " + length);
-        System.out.println("Width: " + width);
-        System.out.println("Room: " + room);
 
     }
 
